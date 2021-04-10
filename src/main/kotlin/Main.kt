@@ -3,15 +3,8 @@ import kotlinx.html.stream.appendHTML
 import java.time.LocalDate
 
 fun main() {
-    /**
-     * Modify FailedPaymentEmail so that it could accept a language to prepare a localized version of the markup.
-     *
-     * Support at least 3 languages - English, Russian and at least 1 language you want.
-     * NB: We won't pay much attention on the correctness of the translations - you are free to use any translation service.
-     */
-
     // You can provide any data as the parameter of FailedPaymentEmail to ensure the email was localized correctly
-    val email = FailedPaymentEmail(provideFakedDataPersonal())
+    val email = FailedPaymentEmail(provideFakedDataOrganization())
 
     println(StringBuilder().appendHTML().html { email.buildContent(this) })
 }

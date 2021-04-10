@@ -2,11 +2,11 @@ import kotlinx.html.*
 import java.time.format.DateTimeFormatter
 import java.util.*
 
+
 class FailedPaymentEmail(
     private val data: FailedPaymentData
 ) {
 
-    // TODO: accept the user's language and build a localized version of the email
     fun buildContent(body: HTML) = with(body) {
         body {
             p {
