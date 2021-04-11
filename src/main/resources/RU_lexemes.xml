@@ -6,46 +6,46 @@
     <!-- Context of use: beginning of an email -->
     <lexeme>
         <key>gratitude_for_staying</key>
-        <content>Thank you for staying with JetBrains</content>
+        <content>Спасибо, что остаётесь с Jetbrains</content>
     </lexeme>
 
     <!-- Context of use: payment error
          example: Unfortunately, we were not able to charge *card number* for your subscriptions -->
     <lexeme>
         <key>payment_error</key>
-        <content>Unfortunately, we were not able to charge</content>
+        <content>К сожалению, нам не удалось списать средства с</content>
     </lexeme>
 
     <!-- Context of use: payment error
          example: Unfortunately, we were not able to charge *card number* for your subscriptions -->
     <lexeme>
         <key>your_card</key>
-        <content>your card</content>
+        <content>вашей карты</content>
     </lexeme>
 
     <!-- Context of use: payment error
          example: Unfortunately, we were not able to charge *card number* for your subscriptions -->
     <lexeme>
         <key>for_your</key>
-        <content>for your</content>
+        <content>за вашу</content>
     </lexeme>
 
     <!-- Context of use: payment error
          example: Unfortunately, we were not able to charge *card number* for your subscription to *product name* -->
     <lexeme>
         <key>subscription_to</key>
-        <content>subscription to</content>
+        <content>подписку на</content>
     </lexeme>
 
     <!-- Context of use: -->
     <lexeme>
         <key>subscription</key>
-        <content>subscription</content>
+        <content>подписке</content>
     </lexeme>
 
     <lexeme>
         <key>your_subscription</key>
-        <content>your subscription</content>
+        <content>вашу подписку</content>
     </lexeme>
 
     <!-- Context of use: payment error
@@ -53,7 +53,7 @@
          as part of Subscription Pack *pack name* for the next month: -->
     <lexeme>
         <key>subscription_pack</key>
-        <content>as part of Subscription Pack</content>
+        <content>которая является частью Набора подписок</content>
     </lexeme>
 
     <!-- Context of use: payment error
@@ -61,106 +61,106 @@
          as part of Subscription Pack *pack name* for the next month: -->
     <lexeme>
         <key>next</key>
-        <content>for the next</content>
+        <content>за следующий</content>
     </lexeme>
 
 
     <lexeme>
         <key>month</key>
-        <content>month</content>
+        <content>месяц</content>
     </lexeme>
 
 
     <lexeme>
         <key>year</key>
-        <content>year</content>
+        <content>год</content>
     </lexeme>
 
 
     <lexeme>
         <key>period</key>
-        <content>period</content>
+        <content>период</content>
     </lexeme>
 
 
     <lexeme>
         <key>to_ensure_access</key>
-        <content>To ensure uninterrupted access to</content>
+        <content>Чтобы обеспечить бесперебойный доступ к</content>
     </lexeme>
 
 
     <lexeme>
         <key>request_renew_via_link</key>
-        <content>please follow the link and renew</content>
+        <content>пожалуйста, перейдите по ссылке и обновите</content>
     </lexeme>
 
     <lexeme>
         <key>manually</key>
-        <content>manually</content>
+        <content>вручную</content>
     </lexeme>
 
     <lexeme>
         <key>till</key>
-        <content>till</content>
+        <content>до</content>
     </lexeme>
 
     <lexeme>
         <key>suggest_retry_payment</key>
-        <content>You can double-check and try your existing payment card again, use another card, or choose a different payment method</content>
+        <content>Вы можете перепроверить и попробовать эту же платежную карту еще раз, использовать другую карту или выбрать другой способ оплаты</content>
     </lexeme>
 
     <lexeme>
         <key>error_common_reasons</key>
-        <content>Common reasons for failed credit card payments include</content>
+        <content>Среди распространенных причин неудачных платежей по кредитной карте</content>
     </lexeme>
 
     <lexeme>
         <key>card_expired_incorrect_entry</key>
-        <content>The card is expired, or the expiration date was entered incorrectly</content>
+        <content>Срок действия карты истек, либо введен некорректно</content>
     </lexeme>
 
     <lexeme>
         <key>funds_limit_issue</key>
-        <content>Insufficient funds or payment limit on the card</content>
+        <content>Недостаток средств, либо недостаток платежного лимита на карте</content>
     </lexeme>
 
     <lexeme>
         <key>or</key>
-        <content>or</content>
+        <content>или</content>
     </lexeme>
 
     <lexeme>
         <key>international_bank_issue</key>
-        <content>The card is not set up for international/overseas transactions, or the issuing bank has rejected the transaction</content>
+        <content>Карта не предназначена для международных/зарубежных транзакций, или банк-эмитент отклонил транзакцию</content>
     </lexeme>
 
     <lexeme>
         <key>request_paypal_check</key>
-        <content>Please make sure that your PayPal account is not closed or deleted</content>
+        <content>Убедитесь, что ваша учетная запись PayPal активна</content>
     </lexeme>
 
     <lexeme>
         <key>check_card_active</key>
-        <content>The credit card connected to your PayPal account should be active</content>
+        <content>Кредитная карта, подключенная к вашей учетной записи PayPal, должна быть активной</content>
     </lexeme>
 
     <lexeme>
         <key>possible_reasons</key>
-        <content>Common reasons for failed card payments include</content>
+        <content>Среди распространенных причин неудачных платежей по кредитной карте</content>
     </lexeme>
 
     <lexeme>
         <key>card_not_confirmed</key>
-        <content>The card is not confirmed in your PayPal account</content>
+        <content>Карта не подтверждена в вашем аккаунте PayPal</content>
     </lexeme>
 
     <lexeme>
         <key>card_details_error</key>
-        <content>The card details (Number, Expiration date, CVC, Billing address) are incomplete or were entered incorrectly</content>
+        <content>Данные карты (номер, срок действия, CVC, платежный адрес) неполны или были введены неверно</content>
     </lexeme>
 
     <lexeme>
         <key>card_expired</key>
-        <content>The card is expired</content>
+        <content>Cрок действия карты истек</content>
     </lexeme>
 </resources>

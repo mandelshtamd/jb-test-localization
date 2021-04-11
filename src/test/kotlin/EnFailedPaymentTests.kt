@@ -14,7 +14,7 @@ class EnFailedPaymentTests {
     }
 
     @Test
-    fun fakeDataPersonalTest() {
+        fun fakeDataPersonalTest() {
         val email = FailedPaymentEmail(
             FailedPaymentData(
                 cardDetails = "VISA **** 1234",

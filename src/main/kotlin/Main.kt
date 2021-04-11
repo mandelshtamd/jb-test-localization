@@ -3,7 +3,7 @@ import kotlinx.html.stream.appendHTML
 import java.time.LocalDate
 
 fun main() {
-    val email = FailedPaymentEmail(provideFakedDataPersonal(), LocaleInformation.EN)
+    val email = FailedPaymentEmail(provideFakedDataPersonal(), LocaleInformation.RU)
     println(StringBuilder().appendHTML().html { email.buildContent(this) })
 }
 
