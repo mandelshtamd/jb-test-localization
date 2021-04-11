@@ -1,38 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string
-        name="greetings_message"
-        >Thank you for staying with JetBrains.</string>
+    <lexeme>
+        <key>greetings</key>
+        <content>Thank you for staying with JetBrains.</content>
+    </lexeme>
 
-    <string
-        name="charge_problem"
-        >Unfortunately, we were not able to charge</string>
 
-    <string
-        name="card"
-        >your card</string>
+    <lexeme>
+        <key>charge_problem</key>
+        <content>Unfortunately, we were not able to charge</content>
+    </lexeme>
 
-    <string
-        name="for_your"
-        >for your</string>
+    <lexeme>
+        <key>card</key>
+        <content>your card</content>
+    </lexeme>
 
-    <string
-        name="subscription_to"
-        >subscription to</string>
+    <lexeme>
+        <key>for_your</key>
+        <content>for_your</content>
+    </lexeme>
 
-    <string
-        name="as_part_of_pack"
-        >as part of Subscription Pack</string>
+    <lexeme>
+        <key>subscription to</key>
+        <content>subscription to</content>
+    </lexeme>
 
-    <string
-        name="for_month"
-        >for the next month</string>
+    <lexeme>
+        <key>as_part_of_pack</key>
+        <content>as part of Subscription Pack</content>
+    </lexeme>
 
-    <string
-        name="for_year"
-        >for the next year</string>
+    <lexeme>
+        <key>for_month</key>
+        <content>for the next month</content>
+    </lexeme>
 
-    <string
-        name="for_period"
-        >for the next period</string>
+    <lexeme>
+        <key>for_year</key>
+        <content>for the next year</content>
+    </lexeme>
+
+    <lexeme>
+        <key>for_period</key>
+        <content>for the next period</content>
+    </lexeme>
 </resources>

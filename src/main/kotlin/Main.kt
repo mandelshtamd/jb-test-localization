@@ -4,8 +4,7 @@ import java.time.LocalDate
 
 fun main() {
     // You can provide any data as the parameter of FailedPaymentEmail to ensure the email was localized correctly
-    val email = FailedPaymentEmail(provideFakedDataOrganization())
-
+    val email = FailedPaymentEmail(provideFakedDataPersonal(), LocaleInformation.EN)
     println(StringBuilder().appendHTML().html { email.buildContent(this) })
 }
 
@@ -26,31 +25,5 @@ private fun provideFakedDataPersonal() = FailedPaymentData(
         billingPeriod = BillingPeriod.ANNUAL
     ),
     cardProvider = CardProvider.PAY_PAL,
-    paymentDeadline = LocalDate.now().plusDays(3)
-)
-
-private fun provideFakedDataOrganization() = FailedPaymentData(
-    cardDetails = "VISA **** 1234",
-    customerType = CustomerType.ORGANIZATION,
-    items = listOf(
-        OrderItem(
-            productCode = "ALL",
-            productName = "All Product Pack",
-            quantity = 3,
-            description = "commercial monthly subscription"
-        ),
-        OrderItem(
-            productCode = "AC",
-            productName = "AppCode",
-            quantity = 7,
-            description = "commercial monthly subscription"
-        )
-    ),
-    subscriptionPack = SubscriptionPack(
-        subPackRef = "0011/ABCD",
-        totalLicenses = 25,
-        billingPeriod = BillingPeriod.MONTHLY
-    ),
-    cardProvider = CardProvider.OTHER,
     paymentDeadline = LocalDate.now().plusDays(3)
 )

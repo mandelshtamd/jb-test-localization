@@ -3,8 +3,10 @@ import java.time.format.DateTimeFormatter
 import java.util.*
 
 
+
 class FailedPaymentEmail(
-    private val data: FailedPaymentData
+    private val data: FailedPaymentData,
+    private var localeCode : LocaleInformation
 ) {
 
     fun buildContent(body: HTML) = with(body) {
