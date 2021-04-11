@@ -1,36 +1,47 @@
 import kotlinx.html.*
 import java.time.format.DateTimeFormatter
 import java.util.*
-
+import javax.xml.parsers.SAXParserFactory
 
 
 class FailedPaymentEmail(
     private val data: FailedPaymentData,
-    private var localeCode : LocaleInformation
+    localeCode : LocaleInformation
 ) {
+    private val lexMap : HashMap<String, Lexeme>
+    init {
+        val sAXParserFactory = SAXParserFactory.newInstance()
+        val sAXParser = sAXParserFactory.newSAXParser()
+        val source = "src\\main\\resources\\${localeCode}_lexemes.xml"
+        val parser = XmlLexemeParser()
+        sAXParser.parse(source, parser)
+        lexMap = parser.lexemeMap
+    }
+
 
     fun buildContent(body: HTML) = with(body) {
         body {
             p {
-                +"Thank you for staying with JetBrains."
+                +"${lexMap["gratitude_for_staying"]?.content}."
             }
             p {
-                +"Unfortunately, we were not able to charge ${data.cardDetails ?: "your card"} for your "
+                +"${lexMap["payment_error"]?.content} ${data.cardDetails ?: "${lexMap["your_card"]?.content}"} "
+                + "${lexMap["for_your"]?.content} "
                 if (data.customerType == CustomerType.PERSONAL) {
-                    +"${data.subscriptionPack.billingPeriod.name.toLowerCase()} subscription to ${
+                    +"${data.subscriptionPack.billingPeriod.name.toLowerCase()} ${lexMap["subscription_to"]?.content} ${
                         data.items.joinToString(
                             ", "
                         ) { it.productName }
                     }."
                 } else {
-                    +"subscription".simplyPluralize(data.items.sumBy { it.quantity })
-                    +" as part of Subscription Pack ${
+                    +"${lexMap["subscription"]?.content}".simplyPluralize(data.items.sumBy { it.quantity })
+                    +" ${lexMap["subscription_pack"]?.content} ${
                         data.subscriptionPack.subPackRef?.let { "#$it" }.orEmpty()
-                    } for the next "
+                    } ${lexMap["next"]?.content} "
                     +(when (data.subscriptionPack.billingPeriod) {
-                        BillingPeriod.MONTHLY -> "month"
-                        BillingPeriod.ANNUAL -> "year"
-                        else -> "period"
+                        BillingPeriod.MONTHLY -> "${lexMap["month"]?.content}"
+                        BillingPeriod.ANNUAL -> "${lexMap["year"]?.content}"
+                        else -> "${lexMap["period"]?.content}"
                     } + ": ")
                     br()
                     data.items.forEach {
@@ -40,43 +51,43 @@ class FailedPaymentEmail(
             }
 
             if (data.cardProvider == CardProvider.PAY_PAL)
-                paypalFailedPaymentReasons()
+                paypalFailedPaymentReasons(lexMap)
             else
-                creditCardFailedPaymentReasons()
+                creditCardFailedPaymentReasons(lexMap)
 
             p {
-                +("To ensure uninterrupted access to your ${data.subscriptionPack.pluralize()}, " +
-                        "please follow the link and renew your ${data.subscriptionPack.pluralize()} ")
+                +("${lexMap["to_ensure_access"]?.content} ${data.subscriptionPack.pluralize()}, " +
+                        "${lexMap["request_renew_via_link"]?.content} ${data.subscriptionPack.pluralize()} ")
                 a(href = "https://foo.bar/ex") {
-                    +"manually"
+                    +"${lexMap["manually"]?.content}"
                 }
                 +" till ${DateTimeFormatter.ofPattern("MMM dd, YYYY", Locale.US).format(data.paymentDeadline)}"
             }
             p {
-                +"You can double-check and try your existing payment card again, use another card, or choose a different payment method."
+                +"${lexMap["suggest_retry_payment"]?.content}."
             }
         }
     }
 }
 
-private fun FlowContent.creditCardFailedPaymentReasons() {
+private fun FlowContent.creditCardFailedPaymentReasons(lexMap : HashMap<String, Lexeme>) {
     p {
-        +"Common reasons for failed credit card payments include:"; br()
-        +"- The card is expired, or the expiration date was entered incorrectly;"; br()
-        +"- Insufficient funds or payment limit on the card; or"; br()
-        +"- The card is not set up for international/overseas transactions, or the issuing bank has rejected the transaction."; br()
+        +"${lexMap["error_common_reasons"]?.content}"; br()
+        +"- ${lexMap["card_expired_incorrect_entry"]?.content}"; br()
+        +"- ${lexMap["funds_limit_issue"]?.content}; ${lexMap["or"]?.content}"; br()
+        +"- ${lexMap["international_bank_issue"]?.content}."; br()
     }
 }
 
-private fun FlowContent.paypalFailedPaymentReasons() {
+private fun FlowContent.paypalFailedPaymentReasons(lexMap : HashMap<String, Lexeme>) {
     p {
-        +("Please make sure that your PayPal account is not closed or deleted. " +
-                "The credit card connected to your PayPal account should be active. " +
-                "Common reasons for failed card payments include:"); br()
-        +"- The card is not confirmed in your PayPal account;"; br()
-        +"- The card details (Number, Expiration date, CVC, Billing address) are incomplete or were entered incorrectly;"; br()
-        +"- The card is expired; or"; br()
-        +"- Insufficient funds or payment limit on the card."
+        +("${lexMap["request_paypal_check"]?.content}. " +
+                "${lexMap["check_card_active"]?.content}. " +
+                "${lexMap["possible_reasons"]?.content}:"); br()
+        +"- ${lexMap["card_not_confirmed"]?.content};"; br()
+        +"- ${lexMap["card_details_error"]?.content};"; br()
+        +"- ${lexMap["card_expired"]?.content}; ${lexMap["or"]?.content}"; br()
+        +"- ${lexMap["funds_limit_issue"]?.content}."
     }
 }
 
