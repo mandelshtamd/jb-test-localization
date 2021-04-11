@@ -1,6 +1,6 @@
 # Localization task
 
-This is an implementation of a payment email localized ro several languages
+This is an implementation of a payment email localized to several languages
 
 
 ## Description
