@@ -4,15 +4,14 @@ import org.xml.sax.Attributes
 
 class XmlLexemeParser : DefaultHandler() {
     val lexemeMap = HashMap<String, Lexeme>()
-    private var currentValue = StringBuilder().append("")
-    private var currentKey = StringBuilder().append("")
+    private var currentValue = StringBuilder()
+    private var currentKey = StringBuilder()
     private var currentElement = false
 
 
     override fun startElement(uri: String, localName: String, qName: String, attributes: Attributes) {
-        super.startElement(uri, localName, qName, attributes)
         currentElement = true
-        currentValue.clear().append("")
+        currentValue.clear()
     }
 
 
@@ -22,7 +21,7 @@ class XmlLexemeParser : DefaultHandler() {
         when(qName) {
             "key" -> currentKey.append(currentValue.toString())
             "content" -> lexemeMap[currentKey.toString()] = Lexeme(currentValue.toString())
-            "lexeme" -> currentKey.clear().append("")
+            "lexeme" -> currentKey.clear()
         }
     }
 

@@ -23,6 +23,12 @@
         <content>вашей карты</content>
     </lexeme>
 
+    <!-- Context of use: -->
+    <lexeme>
+        <key>your</key>
+        <content>вашей</content>
+    </lexeme>
+
     <!-- Context of use: payment error
          example: Unfortunately, we were not able to charge *card number* for your subscriptions -->
     <lexeme>
@@ -43,9 +49,16 @@
         <content>подписке</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>your_subscription</key>
         <content>вашу подписку</content>
+    </lexeme>
+
+    <!-- Context of use: -->
+    <lexeme>
+        <key>to_subscription</key>
+        <content>подписке</content>
     </lexeme>
 
     <!-- Context of use: payment error
@@ -64,101 +77,115 @@
         <content>за следующий</content>
     </lexeme>
 
-
+    <!-- Context of use: -->
     <lexeme>
         <key>month</key>
         <content>месяц</content>
     </lexeme>
 
-
+    <!-- Context of use: -->
     <lexeme>
         <key>year</key>
         <content>год</content>
     </lexeme>
 
-
+    <!-- Context of use: -->
     <lexeme>
         <key>period</key>
         <content>период</content>
     </lexeme>
 
-
+    <!-- Context of use: -->
     <lexeme>
         <key>to_ensure_access</key>
         <content>Чтобы обеспечить бесперебойный доступ к</content>
     </lexeme>
 
-
+    <!-- Context of use: -->
     <lexeme>
         <key>request_renew_via_link</key>
         <content>пожалуйста, перейдите по ссылке и обновите</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>manually</key>
         <content>вручную</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>till</key>
         <content>до</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>suggest_retry_payment</key>
         <content>Вы можете перепроверить и попробовать эту же платежную карту еще раз, использовать другую карту или выбрать другой способ оплаты</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>error_common_reasons</key>
         <content>Среди распространенных причин неудачных платежей по кредитной карте</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>card_expired_incorrect_entry</key>
         <content>Срок действия карты истек, либо введен некорректно</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>funds_limit_issue</key>
         <content>Недостаток средств, либо недостаток платежного лимита на карте</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>or</key>
         <content>или</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>international_bank_issue</key>
         <content>Карта не предназначена для международных/зарубежных транзакций, или банк-эмитент отклонил транзакцию</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>request_paypal_check</key>
         <content>Убедитесь, что ваша учетная запись PayPal активна</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>check_card_active</key>
         <content>Кредитная карта, подключенная к вашей учетной записи PayPal, должна быть активной</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>possible_reasons</key>
         <content>Среди распространенных причин неудачных платежей по кредитной карте</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>card_not_confirmed</key>
         <content>Карта не подтверждена в вашем аккаунте PayPal</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>card_details_error</key>
         <content>Данные карты (номер, срок действия, CVC, платежный адрес) неполны или были введены неверно</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>card_expired</key>
         <content>Cрок действия карты истек</content>

@@ -1,8 +1,8 @@
 import java.util.HashMap
 import javax.xml.parsers.SAXParserFactory
 
-class LexemeStorage(private val localeCode : LocaleInformation) {
-    val lexMap : HashMap<String, Lexeme>
+class LexemeStorage(val localeCode : LocaleInformation) {
+    private val lexMap : HashMap<String, Lexeme>
     init {
         lexMap = getLexemeMapFromParser()
     }
@@ -14,5 +14,9 @@ class LexemeStorage(private val localeCode : LocaleInformation) {
         val parser = XmlLexemeParser()
         sAXParser.parse(source, parser)
         return parser.lexemeMap
+    }
+
+    operator fun get(key: String): Lexeme? {
+        return lexMap[key]
     }
 }

@@ -43,12 +43,25 @@
         <content>Abonnement</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>your_subscription</key>
         <content>Ihre Abonnement</content>
     </lexeme>
 
-    <!-- Context of use: payment error
+    <!-- Context of use: -->
+    <lexeme>
+        <key>your</key>
+        <content>Ihre</content>
+    </lexeme>
+
+    <!-- Context of use: -->
+    <lexeme>
+        <key>to_subscription</key>
+        <content>Amonnement</content>
+    </lexeme>
+
+    <!-- Context of use:
          example: Unfortunately, we were not able to charge *card number* for your subscriptions
          as part of Subscription Pack *pack name* for the next month: -->
     <lexeme>
@@ -56,7 +69,7 @@
         <content>als Teil des Abonnement-Pakets</content>
     </lexeme>
 
-    <!-- Context of use: payment error
+    <!-- Context of use:
          example: Unfortunately, we were not able to charge *card number* for your subscriptions
          as part of Subscription Pack *pack name* for the next month: -->
     <lexeme>
@@ -64,101 +77,115 @@
         <content>für den nächsten</content>
     </lexeme>
 
-
+    <!-- Context of use: -->
     <lexeme>
         <key>month</key>
         <content>Monat</content>
     </lexeme>
 
-
+    <!-- Context of use: -->
     <lexeme>
         <key>year</key>
         <content>Jahr</content>
     </lexeme>
 
-
+    <!-- Context of use: -->
     <lexeme>
         <key>period</key>
         <content>Periode</content>
     </lexeme>
 
-
+    <!-- Context of use: -->
     <lexeme>
         <key>to_ensure_access</key>
         <content>Um einen ununterbrochenen Zugriff zu </content>
     </lexeme>
 
-
+    <!-- Context of use: -->
     <lexeme>
         <key>request_renew_via_link</key>
         <content>Bitte folgen Sie dem Link und erneuern Sie Ihre</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>manually</key>
         <content>manuell</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>till</key>
         <content>bis</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>suggest_retry_payment</key>
         <content>Sie können Ihre vorhandene Zahlungskarte überprüfen und erneut versuchen, eine andere Karte verwenden oder eine andere Zahlungsmethode auswählen</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>error_common_reasons</key>
         <content>Häufige Gründe für fehlgeschlagene Kreditkartenzahlungen sind</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>card_expired_incorrect_entry</key>
         <content>Die Karte ist abgelaufen oder das Ablaufdatum wurde falsch eingegeben</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>funds_limit_issue</key>
         <content>Unzureichendes Guthaben oder Zahlungslimit auf der Karte</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>or</key>
         <content>or</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>international_bank_issue</key>
         <content>Die Karte ist nicht für internationale/ausländische Transaktionen eingerichtet, oder die ausstellende Bank hat die Transaktion abgelehnt</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>request_paypal_check</key>
         <content>Bitte stellen Sie sicher, dass Ihr PayPal-Konto nicht geschlossen oder gelöscht wird</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>check_card_active</key>
         <content>Die mit Ihrem PayPal-Konto verbundene Kreditkarte sollte aktiv sein</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>possible_reasons</key>
         <content>Häufige Gründe für fehlgeschlagene Kartenzahlungen sind</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>card_not_confirmed</key>
         <content>Die Karte wird in Ihrem PayPal-Konto nicht bestätigt</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>card_details_error</key>
         <content>Die Kartendaten (Nummer, Ablaufdatum, CVC, Rechnungsadresse) sind unvollständig oder wurden falsch eingegeben</content>
     </lexeme>
 
+    <!-- Context of use: -->
     <lexeme>
         <key>card_expired</key>
         <content>Die Karte ist abgelaufen</content>
