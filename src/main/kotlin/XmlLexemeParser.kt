@@ -1,13 +1,23 @@
 import org.xml.sax.helpers.DefaultHandler
 import org.xml.sax.Attributes
+import javax.xml.parsers.SAXParserFactory
 
 
 class XmlLexemeParser : DefaultHandler() {
-    val lexemeMap = HashMap<String, Lexeme>()
+    private val lexemeMap = HashMap<String, Lexeme>()
     private var currentValue = StringBuilder()
     private var currentKey = StringBuilder()
     private var currentElement = false
 
+
+    fun getLexemeMapFromParser(localeCode : LocaleInformation) : HashMap<String, Lexeme> {
+        val sAXParserFactory = SAXParserFactory.newInstance()
+        val sAXParser = sAXParserFactory.newSAXParser()
+        val source = "src\\main\\resources\\${localeCode}_lexemes.xml"
+        val parser = XmlLexemeParser()
+        sAXParser.parse(source, parser)
+        return parser.lexemeMap
+    }
 
     override fun startElement(uri: String, localName: String, qName: String, attributes: Attributes) {
         currentElement = true

@@ -12,7 +12,7 @@ class FailedPaymentEmail(
     fun buildContent(body: HTML) = with(body) {
         body {
             gratitudeForStaying(lexMap)
-            paymentErrorDescribtion(data, lexMap)
+            paymentErrorDescription(data, lexMap)
 
             if (data.cardProvider == CardProvider.PAY_PAL)
                 paypalFailedPaymentReasons(lexMap)
@@ -56,7 +56,7 @@ private fun FlowContent.gratitudeForStaying(lexMap : LexemeStorage) {
 }
 
 
-private fun FlowContent.paymentErrorDescribtion(data: FailedPaymentData, lexMap : LexemeStorage) {
+private fun FlowContent.paymentErrorDescription(data: FailedPaymentData, lexMap : LexemeStorage) {
     p {
             +"${lexMap["payment_error"]?.content} ${data.cardDetails ?: "${lexMap["your_card"]?.content}"} "
             + "${lexMap["for_your"]?.content} "
