@@ -38,7 +38,12 @@ private fun String.simplyPluralize(amount: Int, locale: LocaleInformation): Stri
                 "подписка" -> "подписки"
                 else -> this
             }
-            LocaleInformation.EN, LocaleInformation.DE -> this + 's'
+
+            LocaleInformation.EN, LocaleInformation.DE -> when(this) {
+                "your" -> "your"
+                "Ihnen" -> "Ihnen"
+                else -> this + 's'
+            }
         }
     }
 }
