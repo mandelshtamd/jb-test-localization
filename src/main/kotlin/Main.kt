@@ -3,8 +3,13 @@ import kotlinx.html.stream.appendHTML
 import java.time.LocalDate
 
 fun main() {
-    val email = FailedPaymentEmail(provideFakedDataPersonal(), LocaleInformation.RU)
-    println(StringBuilder().appendHTML().html { email.buildContent(this) })
+    val ruEmail = FailedPaymentEmail(provideFakedDataPersonal(), LocaleInformation.RU)
+    val enEmail = FailedPaymentEmail(provideFakedDataPersonal(), LocaleInformation.EN)
+    val geEmail = FailedPaymentEmail(provideFakedDataPersonal(), LocaleInformation.DE)
+
+    println(StringBuilder().appendHTML().html { ruEmail.buildContent(this) })
+    println(StringBuilder().appendHTML().html { enEmail.buildContent(this) })
+    println(StringBuilder().appendHTML().html { geEmail.buildContent(this) })
 }
 
 private fun provideFakedDataPersonal() = FailedPaymentData(

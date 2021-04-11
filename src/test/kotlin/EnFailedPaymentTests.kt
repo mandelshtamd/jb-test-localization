@@ -9,11 +9,6 @@ import javax.xml.parsers.SAXParserFactory
 
 class EnFailedPaymentTests {
     @Test
-    fun thingsShouldWork() {
-        assertEquals(listOf(1,2,3).reversed(), listOf(3,2,1))
-    }
-
-    @Test
         fun fakeDataPersonalTest() {
         val email = FailedPaymentEmail(
             FailedPaymentData(
@@ -90,15 +85,5 @@ class EnFailedPaymentTests {
                 "  </body>\n" +
                 "</html>\n")
         assertEquals(StringBuilder().appendHTML().html { email.buildContent(this) }.toString(), correctAnswer.toString())
-    }
-
-    @Test
-    fun bySAX() {
-        val sAXParserFactory = SAXParserFactory.newInstance()
-        val sAXParser = sAXParserFactory.newSAXParser()
-        val source = "src\\main\\resources\\EN_lexemes.xml"
-        val parser = XmlLexemeParser()
-        sAXParser.parse(source, parser)
-        println(parser.lexemeMap)
     }
 }

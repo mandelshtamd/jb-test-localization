@@ -140,7 +140,7 @@
     <!-- Context of use: -->
     <lexeme>
         <key>funds_limit_issue</key>
-        <content>Недостаток средств, либо недостаток платежного лимита на карте</content>
+        <content>На счету недостаточно средств, либо недостаточный платежный лимит на карте</content>
     </lexeme>
 
     <!-- Context of use: -->
@@ -170,7 +170,7 @@
     <!-- Context of use: -->
     <lexeme>
         <key>possible_reasons</key>
-        <content>Среди распространенных причин неудачных платежей по кредитной карте</content>
+        <content>Основные возможные причины отклонения транзакции</content>
     </lexeme>
 
     <!-- Context of use: -->
