@@ -3,6 +3,7 @@ import kotlinx.html.stream.appendHTML
 import kotlin.test.*
 import org.junit.Test
 import java.time.LocalDate
+import javax.xml.parsers.SAXParserFactory
 
 class EnFailedPaymentTests {
     @Test
@@ -31,8 +32,8 @@ class EnFailedPaymentTests {
                 ),
                 cardProvider = CardProvider.PAY_PAL,
                 paymentDeadline = LocalDate.now().plusDays(3)
-            )
-        )
+            ), LocaleInformation.EN)
+
         val correctAnswer = StringBuilder()
         correctAnswer.append("<html>\n" +
                 "  <body>\n" +
@@ -72,7 +73,8 @@ class EnFailedPaymentTests {
             ),
             cardProvider = CardProvider.OTHER,
             paymentDeadline = LocalDate.now().plusDays(3)
-        ))
+        ), LocaleInformation.EN)
+
         val correctAnswer = StringBuilder()
         correctAnswer.append("<html>\n" +
                 "  <body>\n" +
@@ -84,5 +86,15 @@ class EnFailedPaymentTests {
                 "  </body>\n" +
                 "</html>\n")
         assertEquals(StringBuilder().appendHTML().html { email.buildContent(this) }.toString(), correctAnswer.toString())
+    }
+
+    @Test
+    fun bySAX() {
+        val sAXParserFactory = SAXParserFactory.newInstance()
+        val sAXParser = sAXParserFactory.newSAXParser()
+        val source = "C:\\Users\\Owner\\IdeaProjects\\jb-internship-localization-task-master\\src\\main\\resources\\strings.xml"
+        val parser = MySAXParserHandler()
+        sAXParser.parse(source, parser)
+        println(parser.lexemeMap)
     }
 }
