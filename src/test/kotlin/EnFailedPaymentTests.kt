@@ -29,7 +29,7 @@ class EnFailedPaymentTests {
                 ),
                 cardProvider = CardProvider.PAY_PAL,
                 paymentDeadline = LocalDate.now().plusDays(3)
-            ), LocaleInformation.EN)
+            ), Locale("en_EN"))
 
         val date = LocalDate.now().plusDays(3)
         val correctAnswer = StringBuilder()
@@ -71,7 +71,7 @@ class EnFailedPaymentTests {
             ),
             cardProvider = CardProvider.OTHER,
             paymentDeadline = LocalDate.now().plusDays(3)
-        ), LocaleInformation.EN)
+        ), Locale("en_EN"))
 
         val date = LocalDate.now().plusDays(3)
         val correctAnswer = StringBuilder()
