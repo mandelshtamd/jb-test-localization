@@ -1,15 +1,11 @@
 import kotlinx.html.html
 import kotlinx.html.stream.appendHTML
 import java.time.LocalDate
+import java.util.*
 
 fun main() {
-    val ruEmail = FailedPaymentEmail(provideFakedDataPersonal(), LocaleInformation.RU)
-    val enEmail = FailedPaymentEmail(provideFakedDataPersonal(), LocaleInformation.EN)
-    val geEmail = FailedPaymentEmail(provideFakedDataPersonal(), LocaleInformation.DE)
-
-    println(StringBuilder().appendHTML().html { ruEmail.buildContent(this) })
+    val enEmail = FailedPaymentEmail(provideFakedDataOrganization(), Locale("en_EN"))
     println(StringBuilder().appendHTML().html { enEmail.buildContent(this) })
-    println(StringBuilder().appendHTML().html { geEmail.buildContent(this) })
 }
 
 private fun provideFakedDataPersonal() = FailedPaymentData(
@@ -29,5 +25,31 @@ private fun provideFakedDataPersonal() = FailedPaymentData(
         billingPeriod = BillingPeriod.ANNUAL
     ),
     cardProvider = CardProvider.PAY_PAL,
+    paymentDeadline = LocalDate.now().plusDays(3)
+)
+
+private fun provideFakedDataOrganization() = FailedPaymentData(
+    cardDetails = "VISA **** 1234",
+    customerType = CustomerType.ORGANIZATION,
+    items = listOf(
+        OrderItem(
+            productCode = "ALL",
+            productName = "All Product Pack",
+            quantity = 3,
+            description = "commercial monthly subscription"
+        ),
+        OrderItem(
+            productCode = "AC",
+            productName = "AppCode",
+            quantity = 7,
+            description = "commercial monthly subscription"
+        )
+    ),
+    subscriptionPack = SubscriptionPack(
+        subPackRef = "0011/ABCD",
+        totalLicenses = 25,
+        billingPeriod = BillingPeriod.MONTHLY
+    ),
+    cardProvider = CardProvider.OTHER,
     paymentDeadline = LocalDate.now().plusDays(3)
 )
